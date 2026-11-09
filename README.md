@@ -312,8 +312,7 @@ are the other cases I'd add next, grouped by type.
 
 ## How I used AI
 
-I used Claude throughout: to talk through the problem, draft the contract and scenarios,
-and help write the step definitions with Claude Code.
+I used AI throughout: to talk through the problem, draft the contract and scenarios, and help verify the step definitions with AI.
 
 I didn't take its output on trust:
 
@@ -323,10 +322,9 @@ I didn't take its output on trust:
 
 I also changed several of its suggestions. For example:
 
-- It first suggested skipping the Marine API. I pushed back, because surfing can't be judged
-  without wave data, so I added it.
+- It first suggested skipping the Marine API. I pushed back, because surfing can't be judged without wave data, so I added it.
 - The first design used two endpoints. I changed it to one, to follow the ticket more closely.
-- Showing both a rank number and a score felt confusing, so the list order became the rank.
+- - Authentication wasn't in the ticket. I added an API key and correlation IDs, because real APIs need them, and chose an API key over a bearer token because there's no logged-in user.
 - When ts-node crashed, I read the stack trace, saw the problem was in ts-node itself, and switched to tsx.
 
 ## Next steps
