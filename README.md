@@ -262,6 +262,30 @@ The ticket leaves some things open, so I've assumed:
 - **Units.** The feature tables use hours for sunshine, but Open-Meteo reports seconds. The mock
   converts hours to seconds when building the fake response, to match the real API.
 
+## Test coverage
+
+I focused on the scenarios that pin down the contract and the main rules. These
+are the other cases I'd add next, grouped by type.
+
+**Covered:**
+
+- Positive: one match, several matches, choose by ID, valid API key
+- Negative: no input, 1 character, non-numeric ID, no match, unknown ID, no or invalid API key
+- Edge: ties, inland places, thunderstorm, no correlation ID
+- Contract: 7 consecutive days, 4 activities, sorted, ranks 1 to 4, scores 0 to 100, labels match scores, reasons present, error format
+- Dependencies: weather or sea service down
+
+**Not covered yet:**
+
+- Boundary: exactly 2 characters accepted; 10 vs 11+ matches; score label boundaries (24/25, 49/50, 74/75); skiing at exactly 0°C; waves at 0.5 m and 4 m
+- Negative: both city and locationId sent; name of only spaces; zero or negative ID; wrong HTTP method (405)
+- Edge: upper/lower case names; special characters (São Paulo, O'Brien); leading and trailing spaces; place with no region; places in other timezones; all four activities tied
+- Contract: every weather field present; sunshine converted to hours; full JSON schema check; Content-Type is JSON
+- Business rules: strong wind, very hot or cold, flat or huge waves
+- Dependencies: location search service down; timeouts; broken or partial weather data
+- Headers: generated correlation ID is a valid UUID; invalid correlation IDs replaced; error messages don't leak technical details
+- Non-functional: response time, load testing, rate limiting (429), caching
+
 ## Trade-offs
 
 - **One endpoint with a 300 list.** This follows the ticket closely, but the front end has to
