@@ -121,6 +121,8 @@ src/app.ts    the placeholder API (not the real implementation)
 
 ## API contract
 
+The full contract, with every field explained, is in [docs/api-contract.md](docs/api-contract.md).
+
 ```
 GET /activity-rankings?city={name}
 GET /activity-rankings?locationId={id}
