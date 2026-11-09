@@ -1,0 +1,93 @@
+{
+  "latitude": 50.40879,
+  "longitude": -5.066818,
+  "generationtime_ms": 0.6468296051025391,
+  "utc_offset_seconds": 0,
+  "timezone": "Europe/London",
+  "timezone_abbreviation": "GMT",
+  "elevation": 32.0,
+  "daily_units": {
+    "time": "iso8601",
+    "weather_code": "wmo code",
+    "temperature_2m_max": "\u00b0C",
+    "temperature_2m_min": "\u00b0C",
+    "rain_sum": "mm",
+    "snowfall_sum": "cm",
+    "sunshine_duration": "s",
+    "wind_speed_10m_max": "km/h"
+  },
+  "daily": {
+    "time": [
+      "2026-11-07",
+      "2026-11-08",
+      "2026-11-09",
+      "2026-11-10",
+      "2026-11-11",
+      "2026-11-12",
+      "2026-11-13"
+    ],
+    "weather_code": [
+      3,
+      3,
+      55,
+      61,
+      61,
+      53,
+      53
+    ],
+    "temperature_2m_max": [
+      12.9,
+      13.1,
+      13.2,
+      15.2,
+      15.5,
+      15.5,
+      10.4
+    ],
+    "temperature_2m_min": [
+      6.0,
+      4.8,
+      9.4,
+      12.5,
+      13.7,
+      10.4,
+      7.7
+    ],
+    "rain_sum": [
+      0.0,
+      0.0,
+      1.95,
+      5.07,
+      7.9,
+      3.5,
+      4.0
+    ],
+    "snowfall_sum": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sunshine_duration": [
+      26315.4,
+      28800.0,
+      903.05,
+      0.0,
+      29017.41,
+      4786.87,
+      30097.77
+    ],
+    "wind_speed_10m_max": [
+      8.6,
+      12.2,
+      28.8,
+      22.0,
+      22.7,
+      20.5,
+      27.7
+    ]
+  }
+}
