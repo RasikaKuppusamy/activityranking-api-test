@@ -28,27 +28,7 @@ Every scenario should fail, and the summary should end with something like:
 ```
 
 No step should ever show as undefined, pending or ambiguous. If one does, something
-in the step definitions is broken.
-
-Other useful commands:
-
-```bash
-# One feature file
-npx cucumber-js features/location/location-search.feature
-
-# One scenario, by the line number of its "Scenario:" line
-npx cucumber-js features/location/location-search.feature:11
-
-# By tag (also @negative, @location, @rankings, @weather, @headers)
-npx cucumber-js --tags @smoke
-
-# Check every step has code, without running anything
-npx cucumber-js --dry-run
-
-# Type-check the TypeScript. tsx runs the step code without checking types,
-# so a type error could otherwise go unnoticed
-npm run typecheck
-```
+in the step definitions is broken. 
 
 ### The report
 
