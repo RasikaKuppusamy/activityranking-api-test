@@ -199,7 +199,7 @@ The ticket leaves some things open, so I've assumed:
 
 1. **Partial names** return a list of matching places to choose from, rather than rankings for all of them.
 2. **Suitability** is a label (Excellent, Good, Fair, Poor) plus a score from 0 to 100.
-3. **Weather rules** aren't defined in the ticket, so I used common sense: snow and cold suit
+3. **Weather rules** snow and cold suit
    skiing, heavy rain suits indoor sightseeing, sunshine and mild temperatures suit outdoor sightseeing.
 4. **Surfing** depends mostly on waves, so it needs Marine data as well as wind and storms.
    Roughly: 1–3 m waves with a long period are good, under 0.5 m is too flat, over 4 m is too
@@ -207,11 +207,10 @@ The ticket leaves some things open, so I've assumed:
 5. **Names** must be at least 2 characters.
 6. **If any weather service is down**, the API returns 503 and never shows rankings based on
    missing or made-up data.
-7. **Authentication:** the ticket doesn't mention security, but a production API is normally
+7. **Authentication:** A production API is normally
    protected, so I've assumed an API key is required on every request (`x-api-key`; missing or
-   wrong gives 401). I chose an API key over a bearer token because this feature has no logged-in
-   user to identify: anyone can look up any city, so there's no session to hold a token for. A
-   single shared key fits that better than a token scheme built for user identity. The test
+   wrong gives 401). I chose an API key. anyone can look up any city, so there's no session to hold a token for. A
+   single shared key fits that better. The test
    suite's key comes from the `TEST_API_KEY` environment variable, falling back to a fixed default
    (see `features/support/config.ts`), so it can be swapped per environment without touching any
    test code.
